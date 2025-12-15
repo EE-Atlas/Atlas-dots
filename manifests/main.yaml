@@ -5,3 +5,4 @@ depends:
   - git
   - nvim
   - zsh
+  - btop

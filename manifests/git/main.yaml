@@ -1,0 +1,5 @@
+actions:
+  - procedure: shell.run
+    info: "Change shell for git to nano"
+    command: git
+    args: ["config", "--global", "core.editor", "nano"]

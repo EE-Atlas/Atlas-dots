@@ -1,0 +1,5 @@
+[config]
+name = "Atlas-Dots"
+description = "Install and configure Atlas dot files"
+version = "0.0.1"
+author = "Maksim Shushkevich"

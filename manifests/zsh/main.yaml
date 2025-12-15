@@ -1,0 +1,19 @@
+actions:
+  - procedure: paru.install
+    info: Installing zsh
+    package: ["zsh", "zsh-completions"]
+
+  - procedure: os.symlink
+    info: Adding symlink to zsh config
+    src: "./files/.zshrc"
+    dst: "{{ user.home }}/.zshrc"
+
+  - procedure: os.symlink
+    info: Adding symlink to zim config
+    src: "./files/.zimrc"
+    dst: "{{ user.home }}/.config/zsh/.zimrc"
+
+  - procedure: shell.run
+    info: "Changing shell for user"
+    command: chsh
+    args: ["-s", "$(which zsh)"]

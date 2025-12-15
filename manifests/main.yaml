@@ -1,0 +1,7 @@
+depends:
+  - Atlas-essentials
+  - pacman
+  - fastfetch
+  - git
+  - nvim
+  - zsh

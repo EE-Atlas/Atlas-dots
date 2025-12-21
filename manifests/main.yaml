@@ -1,5 +1,5 @@
 depends:
-  - git+https://github.com/EE-Atlas/Atlas-essentials
+  - git+https://github.com/EE-Atlas/Atlas-essentials@tag=v0.0.1
   - pacman
   - fastfetch
   - git

@@ -1,19 +1,28 @@
 actions:
-  - procedure: paru.install
+  - procedure: aur.install
     info: Installing zsh
-    package: ["zsh", "zsh-completions"]
+    packages: ["zsh", "zsh-completions"]
+
+  - procedure: aur.install
+    info: Installing Nerd Fonts
+    packages: ["nerd-fonts"]
+
+  - procedure: aur.install
+    info: Installing startship
+    packages: ["starship"]
+    skip_condition: starship -V
+
+  - procedure: os.symlink
+    info: Adding symlink for starship config
+    src: "./files/starship.toml"
+    dst: "{{ user.home }}/.config/starship.toml"
 
   - procedure: os.symlink
     info: Adding symlink to zsh config
     src: "./files/.zshrc"
     dst: "{{ user.home }}/.zshrc"
 
-  - procedure: os.symlink
-    info: Adding symlink to zim config
-    src: "./files/.zimrc"
-    dst: "{{ user.home }}/.config/zsh/.zimrc"
-
   - procedure: shell.run
-    info: "Changing shell for user"
+    info: Changing shell for user
     command: chsh
     args: ["-s", "$(which zsh)"]

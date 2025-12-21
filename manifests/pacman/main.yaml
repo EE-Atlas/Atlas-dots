@@ -1,4 +1,10 @@
 actions:
+  - procedure: os.remove
+    info: Removing old pacman.conf backup
+    src: "/etc/pacman.conf.bak"
+    not_exists_ok: true
+    privileged: true
+
   - procedure: os.move
     info: "Backupping old pacman.conf"
     src: "/etc/pacman.conf"
@@ -11,8 +17,5 @@ actions:
     dst: "/etc/pacman.conf"
     privileged: true
 
-  - procedure: shell.run
-    info: "Update system"
-    command: pacman
-    args: ["-Suy"]
-    privileged: true
+  - procedure: aur.update
+    info: "Updating system"

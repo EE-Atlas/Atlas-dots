@@ -1,7 +1,8 @@
 actions:
-  - procedure: pacman.install
+  - procedure: aur.install
     info: Installing fastfetch
-    package: ["fastfetch"]
+    packages: ["fastfetch"]
+    skip_condition: "fastfetch -V"
 
   - procedure: os.symlink
     info: Adding symlink for fastfetch styles
